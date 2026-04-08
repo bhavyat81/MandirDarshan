@@ -1,7 +1,17 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { PlaceholderScreen } from '../components/PlaceholderScreen';
 import { Colors } from '../utils/colors';
+import { HomeScreen } from '../screens/HomeScreen';
+import { StateListScreen } from '../screens/StateListScreen';
+import { CityListScreen } from '../screens/CityListScreen';
+import { TempleListScreen } from '../screens/TempleListScreen';
+import { TempleDetailScreen } from '../screens/TempleDetailScreen';
+import { JyotirlingaListScreen } from '../screens/JyotirlingaListScreen';
+import { JyotirlingaDetailScreen } from '../screens/JyotirlingaDetailScreen';
+import { ShaktiPeethaListScreen } from '../screens/ShaktiPeethaListScreen';
+import { ShaktiPeethaDetailScreen } from '../screens/ShaktiPeethaDetailScreen';
+import { CharDhamListScreen } from '../screens/CharDhamListScreen';
+import { CharDhamDetailScreen } from '../screens/CharDhamDetailScreen';
 
 export type HomeStackParamList = {
   HomeScreen: undefined;
@@ -28,72 +38,17 @@ export function HomeStackNavigator() {
         headerTitleStyle: { fontWeight: 'bold' },
       }}
     >
-      <Stack.Screen
-        name="HomeScreen"
-        options={{ title: 'Mandir Darshan 🛕' }}
-      >
-        {() => <PlaceholderScreen screenName="Home Screen" />}
-      </Stack.Screen>
-      <Stack.Screen
-        name="StateListScreen"
-        options={{ title: 'States' }}
-      >
-        {() => <PlaceholderScreen screenName="State List Screen" />}
-      </Stack.Screen>
-      <Stack.Screen
-        name="CityListScreen"
-        options={{ title: 'Cities' }}
-      >
-        {() => <PlaceholderScreen screenName="City List Screen" />}
-      </Stack.Screen>
-      <Stack.Screen
-        name="TempleListScreen"
-        options={{ title: 'Temples' }}
-      >
-        {() => <PlaceholderScreen screenName="Temple List Screen" />}
-      </Stack.Screen>
-      <Stack.Screen
-        name="TempleDetailScreen"
-        options={{ title: 'Temple Details' }}
-      >
-        {() => <PlaceholderScreen screenName="Temple Detail Screen" />}
-      </Stack.Screen>
-      <Stack.Screen
-        name="JyotirlingaListScreen"
-        options={{ title: '12 Jyotirlingas' }}
-      >
-        {() => <PlaceholderScreen screenName="Jyotirlinga List Screen" />}
-      </Stack.Screen>
-      <Stack.Screen
-        name="JyotirlingaDetailScreen"
-        options={{ title: 'Jyotirlinga Details' }}
-      >
-        {() => <PlaceholderScreen screenName="Jyotirlinga Detail Screen" />}
-      </Stack.Screen>
-      <Stack.Screen
-        name="ShaktiPeethaListScreen"
-        options={{ title: 'Shakti Peethas' }}
-      >
-        {() => <PlaceholderScreen screenName="Shakti Peetha List Screen" />}
-      </Stack.Screen>
-      <Stack.Screen
-        name="ShaktiPeethaDetailScreen"
-        options={{ title: 'Shakti Peetha Details' }}
-      >
-        {() => <PlaceholderScreen screenName="Shakti Peetha Detail Screen" />}
-      </Stack.Screen>
-      <Stack.Screen
-        name="CharDhamListScreen"
-        options={{ title: 'Char Dham' }}
-      >
-        {() => <PlaceholderScreen screenName="Char Dham List Screen" />}
-      </Stack.Screen>
-      <Stack.Screen
-        name="CharDhamDetailScreen"
-        options={{ title: 'Char Dham Details' }}
-      >
-        {() => <PlaceholderScreen screenName="Char Dham Detail Screen" />}
-      </Stack.Screen>
+      <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="StateListScreen" component={StateListScreen} options={{ title: 'Browse by State' }} />
+      <Stack.Screen name="CityListScreen" component={CityListScreen} options={{ title: 'Cities' }} />
+      <Stack.Screen name="TempleListScreen" component={TempleListScreen} options={{ title: 'Temples' }} />
+      <Stack.Screen name="TempleDetailScreen" component={TempleDetailScreen} options={{ title: 'Temple Details' }} />
+      <Stack.Screen name="JyotirlingaListScreen" component={JyotirlingaListScreen} options={{ title: '12 Jyotirlingas' }} />
+      <Stack.Screen name="JyotirlingaDetailScreen" component={JyotirlingaDetailScreen} options={{ title: 'Jyotirlinga' }} />
+      <Stack.Screen name="ShaktiPeethaListScreen" component={ShaktiPeethaListScreen} options={{ title: 'Shakti Peethas' }} />
+      <Stack.Screen name="ShaktiPeethaDetailScreen" component={ShaktiPeethaDetailScreen} options={{ title: 'Shakti Peetha' }} />
+      <Stack.Screen name="CharDhamListScreen" component={CharDhamListScreen} options={{ title: 'Char Dham' }} />
+      <Stack.Screen name="CharDhamDetailScreen" component={CharDhamDetailScreen} options={{ title: 'Char Dham' }} />
     </Stack.Navigator>
   );
 }
