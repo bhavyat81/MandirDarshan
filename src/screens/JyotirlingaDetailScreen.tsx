@@ -78,9 +78,10 @@ export function JyotirlingaDetailScreen() {
           {item.vipDarshan?.available && (
             <InfoSection title="VIP Darshan" icon="star-outline">
               <Text style={styles.label}>Ticket Types:</Text>
-              {item.vipDarshan.ticketTypes.map((t, i) => (
-                <Text key={i} style={styles.bodyText}>• {t} — {item.vipDarshan!.prices[i] ?? ''}</Text>
-              ))}
+              {item.vipDarshan.ticketTypes.map((t, i) => {
+                const price = i < item.vipDarshan!.prices.length ? item.vipDarshan!.prices[i] : '';
+                return <Text key={i} style={styles.bodyText}>• {t}{price ? ` — ${price}` : ''}</Text>;
+              })}
               <Text style={[styles.label, styles.labelSpacing]}>Timings: <Text style={styles.value}>{item.vipDarshan.timings}</Text></Text>
               <Text style={[styles.label, styles.labelSpacing]}>Booking: <Text style={styles.value}>{item.vipDarshan.bookingInfo}</Text></Text>
             </InfoSection>

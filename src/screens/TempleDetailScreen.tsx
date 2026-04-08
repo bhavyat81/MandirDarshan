@@ -89,9 +89,10 @@ export function TempleDetailScreen() {
           {vipDarshan?.available && (
             <InfoSection title="VIP Darshan" icon="star">
               <Text style={styles.label}>Ticket Types:</Text>
-              {vipDarshan.ticketTypes.map((t, i) => (
-                <Text key={i} style={styles.bodyText}>• {t} — {vipDarshan.prices[i] ?? ''}</Text>
-              ))}
+              {vipDarshan.ticketTypes.map((t, i) => {
+                const price = i < vipDarshan.prices.length ? vipDarshan.prices[i] : '';
+                return <Text key={i} style={styles.bodyText}>• {t}{price ? ` — ${price}` : ''}</Text>;
+              })}
               <Text style={[styles.label, styles.labelSpacing]}>Timings: <Text style={styles.value}>{vipDarshan.timings}</Text></Text>
               <Text style={[styles.label, styles.labelSpacing]}>Booking: <Text style={styles.value}>{vipDarshan.bookingInfo}</Text></Text>
             </InfoSection>
