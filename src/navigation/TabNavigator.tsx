@@ -2,7 +2,9 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { HomeStackNavigator } from './HomeStackNavigator';
-import { PlaceholderScreen } from '../components/PlaceholderScreen';
+import { SearchScreen } from '../screens/SearchScreen';
+import { FavoritesScreen } from '../screens/FavoritesScreen';
+import { AboutScreen } from '../screens/AboutScreen';
 import { Colors } from '../utils/colors';
 
 export type TabParamList = {
@@ -41,15 +43,9 @@ export function TabNavigator() {
       })}
     >
       <Tab.Screen name="Home" component={HomeStackNavigator} />
-      <Tab.Screen name="Search">
-        {() => <PlaceholderScreen screenName="Search Screen" />}
-      </Tab.Screen>
-      <Tab.Screen name="Favorites">
-        {() => <PlaceholderScreen screenName="Favorites Screen" />}
-      </Tab.Screen>
-      <Tab.Screen name="About">
-        {() => <PlaceholderScreen screenName="About Screen" />}
-      </Tab.Screen>
+      <Tab.Screen name="Search" component={SearchScreen} />
+      <Tab.Screen name="Favorites" component={FavoritesScreen} />
+      <Tab.Screen name="About" component={AboutScreen} />
     </Tab.Navigator>
   );
 }
